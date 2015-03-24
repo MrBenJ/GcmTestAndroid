@@ -17,7 +17,7 @@ import java.io.IOException;
 
 public class MainActivity extends ActionBarActivity {
 
-    private String PROJECT_NUMBER = getString(R.string.PROJECT_NUMBER);
+    private String PROJECT_NUMBER = "601579226917";
     private String mRegId;
 
     private EditText mEditText;
@@ -45,6 +45,7 @@ public class MainActivity extends ActionBarActivity {
             @Override
             protected String doInBackground(Void... params) {
                 String message = "";
+                Log.i("TAG", "Doing in background...");
                 try {
                     if (mGcm == null) {
                         mGcm = GoogleCloudMessaging.getInstance(getApplicationContext());
@@ -67,7 +68,8 @@ public class MainActivity extends ActionBarActivity {
                 mEditText.setText(message);
             }
 
-        };
+        }.execute(null, null, null);
+
 
 
     }

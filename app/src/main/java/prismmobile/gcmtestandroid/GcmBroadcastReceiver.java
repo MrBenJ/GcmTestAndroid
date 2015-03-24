@@ -17,7 +17,7 @@ public class GcmBroadcastReceiver extends WakefulBroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        // Explicity specify this class will handle the intent (intent filter stuff)
+        // Explicitly specify this class will handle the intent (intent filter stuff)
         ComponentName componentName = new ComponentName(context.getPackageName(),
                 GcmMessageHandler.class.getName());
 
